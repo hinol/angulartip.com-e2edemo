@@ -7,6 +7,7 @@ import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CarService} from './services/car.service';
 
 @NgModule({
   imports: [
@@ -21,6 +22,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
       MatSelectModule
 
   ],
+    providers: [
+      CarService
+    ],
   declarations: [CarColorComponent, CarEngineComponent, CarIndexComponent],
   exports: [
     CarColorComponent, CarEngineComponent, CarIndexComponent

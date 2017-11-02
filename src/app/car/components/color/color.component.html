@@ -4,9 +4,9 @@
 
 
       <mat-form-field>
-          <mat-select placeholder="Favorite food"  formControlName="color" name="color" placeholder="Color" >
-              <mat-option *ngFor="let food of [1,2,3]" [value]="food">
-                  {{food}}
+          <mat-select placeholder="Color"  formControlName="color" name="color" >
+              <mat-option *ngFor="let color of colors" [value]="color.value">
+                  {{color.label}}
               </mat-option>
           </mat-select>
       </mat-form-field>
@@ -20,9 +20,9 @@
 
 
         <mat-form-field>
-            <mat-select placeholder="Favorite food"  formControlName="type" name="type" placeholder="type" >
-                <mat-option *ngFor="let food of [1,2,3]" [value]="food">
-                    {{food}}
+            <mat-select placeholder="Type"  formControlName="type" name="type"  >
+                <mat-option *ngFor="let type of types" [value]="type.value">
+                    {{type.label}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
@@ -37,5 +37,12 @@
   </div>
 
 </form>
+
+<h3>
+    <span>
+        Car posibilities: {{count}}
+    </span>
+</h3>
+
 
 {{form.value|json}}

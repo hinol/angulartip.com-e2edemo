@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ColorForm} from '../../forms/color.form';
+import {ColorForm, ColorOption, TypeOption} from '../../forms/color.form';
 import {FormGroup} from '@angular/forms';
+import {CarService} from '../../services/car.service';
 
 @Component({
     selector: 'car-color',
@@ -10,15 +11,22 @@ import {FormGroup} from '@angular/forms';
 export class CarColorComponent implements OnInit {
     form: FormGroup;
     submitted = false;
+    colors = ColorOption;
+    types = TypeOption;
+    count: number;
 
-    constructor() {
+    constructor(private carService: CarService) {
     }
 
     ngOnInit() {
         this.form = ColorForm.get();
+        this.count = this.carService.calculate({color: null, type: null});
     }
 
-    save(data: any, valid: boolean){
+    save(data: any, valid: boolean) {
         this.submitted = true;
+        if (valid) {
+            this.count = this.carService.calculate(data);
+        }
     }
 }
