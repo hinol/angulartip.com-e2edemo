@@ -9,11 +9,12 @@
                   {{color.label}}
               </mat-option>
           </mat-select>
+          <mat-error *ngIf="submitted && form.hasError('required', ['color'])" class="text-danger">
+              Color is required
+          </mat-error>
       </mat-form-field>
 
-      <mat-hint *ngIf="submitted && form.hasError('required', ['color'])" class="text-danger">
-          Color is required
-      </mat-hint>
+
   </div>
 
     <div class="form-group text-center">
@@ -25,15 +26,17 @@
                     {{type.label}}
                 </mat-option>
             </mat-select>
+            <mat-error *ngIf="submitted && form.hasError('required', ['type'])" class="text-danger">
+                Type is required
+            </mat-error>
         </mat-form-field>
 
-        <mat-hint *ngIf="submitted && form.hasError('required', ['type'])" class="text-danger">
-            Type is required
-        </mat-hint>
+
     </div>
 
   <div class="text-center">
     <button mat-button="primary" type="submit" class="btn btn-default" mat-raised-button>Submit</button>
+    <button mat-button="secondary" type="reset" class="btn btn-default" mat-raised-button>Reset</button>
   </div>
 
 </form>
