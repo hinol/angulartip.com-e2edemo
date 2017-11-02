@@ -5,7 +5,8 @@ import { CarEngineComponent } from './components/engine/engine.component';
 import {CarIndexComponent} from './components/index/index.component';
 import {RouterModule} from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatButtonModule, MatFormFieldModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -15,7 +16,9 @@ import {MatButtonModule, MatFormFieldModule, MatInputModule} from '@angular/mate
       MatButtonModule,
       ReactiveFormsModule,
       FormsModule,
-      MatFormFieldModule
+      MatFormFieldModule,
+      BrowserAnimationsModule,
+      MatSelectModule
 
   ],
   declarations: [CarColorComponent, CarEngineComponent, CarIndexComponent],

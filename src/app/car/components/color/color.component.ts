@@ -8,7 +8,8 @@ import {FormGroup} from '@angular/forms';
     styleUrls: ['./color.component.scss']
 })
 export class CarColorComponent implements OnInit {
-    public form: FormGroup;
+    form: FormGroup;
+    submitted = false;
 
     constructor() {
     }
@@ -17,4 +18,7 @@ export class CarColorComponent implements OnInit {
         this.form = ColorForm.get();
     }
 
+    save(data: any, valid: boolean){
+        this.submitted = true;
+    }
 }
