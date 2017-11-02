@@ -1,7 +1,7 @@
 import {ColorPage} from '../../po/color.po';
 import {ColorOptionEnum, TypeOptionEnum} from '../../../src/app/car/forms/color.form';
 
-describe('e2edemo App', () => {
+describe('Color Page', () => {
 
     beforeEach(() => {
         ColorPage.navigate();

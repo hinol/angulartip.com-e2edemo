@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'car-engine',
-  templateUrl: './engine.component.html',
-  styleUrls: ['./engine.component.scss']
+    selector: 'car-engine',
+    templateUrl: './engine.component.html',
+    styleUrls: ['./engine.component.scss']
 })
-export class CarEngineComponent implements OnInit {
+export class CarEngineComponent{
 
-  constructor() { }
+    value: number;
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
 
 }
