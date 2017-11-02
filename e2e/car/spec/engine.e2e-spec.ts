@@ -9,10 +9,7 @@ fdescribe('Engine Page', () => {
     });
 
     it('click table', () => {
-        EnginePage.clickTable(2,2);
-
+        EnginePage.clickTable(2, 2);
         expect(EnginePage.getValue()).toEqual(2);
-
-
     });
 });

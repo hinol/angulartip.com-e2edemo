@@ -8,15 +8,11 @@ export class EnginePage {
     }
 
     static getValue() {
-        return element.all(by.css('h6 p strong')).then(items => {
-            for (const item in items) {
-                items[item].getText().then(v => {
-                    if(isNumeric(v)){
-                        return parseFloat(v);
-                    }
-                });
-            }
-        });
+        return element.all(by.css('h6 p strong'))
+            .filter(elem => elem.getText().then(v => isNumeric(v)))
+            .first()
+            .getText()
+            .then(v => parseFloat(v));
     }
 
 
