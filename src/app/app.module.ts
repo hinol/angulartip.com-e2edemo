@@ -5,6 +5,8 @@ import {AppComponent} from './app.component';
 import {CarModule} from './car/car.module';
 import {RouterModule} from '@angular/router';
 import {appRoutes} from './app.routing';
+import {MatButtonModule, MatInputModule} from '@angular/material';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +15,7 @@ import {appRoutes} from './app.routing';
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
+
 
     CarModule
   ],
