@@ -8,7 +8,7 @@ export class EnginePage {
     }
 
     static getValue() {
-        return element.all(by.css('h6 p strong'))
+        return element.all(by.css('div p strong'))
             .filter(elem => elem.getText().then(v => isNumeric(v)))
             .first()
             .getText()
@@ -17,11 +17,13 @@ export class EnginePage {
 
 
     static clickTable(row: number, col: number) {
-        element.all(by.css('table tr')).then(rows => {
-            rows[row - 1].all(by.css('td')).then(cols => {
-                cols[col - 1].click();
-            });
-        });
+        element(by.css(`table tr:nth-child(${row}) > td:nth-child(${col})`)).click();
+        //
+        // element.all(by.css('table tr')).then(rows => {
+        //     rows[row - 1].all(by.css('td')).then(cols => {
+        //         cols[col - 1].click();
+        //     });
+        // });
     }
 
 }
