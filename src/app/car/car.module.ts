@@ -10,6 +10,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {CarService} from './services/car.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FetchCarService} from './services/fetch-car.service';
+import {ChangeColorService} from './services/change-color.service';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import {FetchCarService} from './services/fetch-car.service';
     ],
     providers: [
         CarService,
-        FetchCarService
+        FetchCarService,
+        ChangeColorService
     ],
     declarations: [CarColorComponent, CarEngineComponent, CarIndexComponent],
     exports: [

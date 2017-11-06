@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import {FetchCarService} from './fetch-car.service';
+import {ChangeColorService} from './change-color.service';
 
 describe('Cat Service  test', () => {
 
@@ -13,12 +14,16 @@ describe('Cat Service  test', () => {
 
         }
     }
+    class ChangeColorServiceMock{
+
+    }
 
 
     beforeEach(() => {
         TestBed.configureTestingModule({
             providers: [CarService,
                 {provide: FetchCarService, useClass: FetchCarServiceMock},
+                {provide: ChangeColorService, useClass: ChangeColorServiceMock},
 
             ]
         });
