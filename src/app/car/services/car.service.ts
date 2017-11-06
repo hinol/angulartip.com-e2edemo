@@ -41,7 +41,7 @@ export class CarService {
 
     fetchAllCars(color: ColorOptionEnum): Observable<number> {
         return this.fetchCarService.getCars()
-            .filter(data =>  data.filter(_color => _color === color))
+            .map(data =>  data.filter(_color => _color === color))
             .map(data => data.length);
     }
 

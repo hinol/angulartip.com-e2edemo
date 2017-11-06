@@ -3,6 +3,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import {ColorOptionEnum} from '../forms/color.form';
+import 'rxjs/add/operator/switchMapTo';
+import 'rxjs/add/operator/mapTo';
 
 @Injectable()
 export class FetchCarService {
@@ -11,9 +13,10 @@ export class FetchCarService {
     }
 
 
-    getCars(): Observable<Array<ColorOptionEnum>> {
+    getCars(): Observable<ColorOptionEnum[]> {
         return this.http
-            .get('someurl');
+            .get('someurl')
+            .mapTo([ColorOptionEnum.PINK]);
     }
 
 
