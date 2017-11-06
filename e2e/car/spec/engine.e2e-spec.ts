@@ -2,7 +2,7 @@ import {ColorPage} from '../../po/color.po';
 import {ColorOptionEnum, TypeOptionEnum} from '../../../src/app/car/forms/color.form';
 import {EnginePage} from '../../po/engine.po';
 
-fdescribe('Engine Page', () => {
+describe('Engine Page', () => {
 
     beforeEach(() => {
         EnginePage.navigate();
