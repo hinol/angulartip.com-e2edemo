@@ -20,13 +20,13 @@ export class CarColorComponent implements OnInit {
 
     ngOnInit() {
         this.form = ColorForm.get();
-        this.count = this.carService.calculate({color: null, type: null});
+        this.count = this.carService.calculate({color: null, type: null}) + 10;
     }
 
     save(data: any, valid: boolean) {
         this.submitted = true;
         if (valid) {
-            this.count = this.carService.calculate(data);
+            this.count = this.carService.calculate(data)+10;
         }
     }
 }

@@ -6,6 +6,7 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import {FetchCarService} from './fetch-car.service';
 import {ChangeColorService} from './change-color.service';
+import {Car} from '../classes/car.interface';
 
 describe('Cat Service  test', () => {
 
@@ -30,12 +31,18 @@ describe('Cat Service  test', () => {
     });
 
     let carService: CarService;
-    it('should be created', inject([CarService], (service: CarService) => {
+    let cars: Car[];
+
+    beforeEach(inject([CarService], (service: CarService) => {
         carService = service;
+        cars = (<any>carService).cars;
         expect(service).toBeTruthy();
     }));
-
-    it('some dummy test', () => {
+    it('set cars', () => {
+        carService.setCars([{color: ColorOptionEnum.BLUE, type: TypeOptionEnum.PICKUP}]);
+        expect(carService['cars'].length).toEqual(1);
+    });
+    it('some dummy testaa', () => {
         const posibilityCars = carService.calculate({color: ColorOptionEnum.BLUE, type: TypeOptionEnum.PICKUP});
         expect(posibilityCars).toEqual(0);
     });
