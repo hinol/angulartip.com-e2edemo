@@ -7,9 +7,10 @@ export class ChangeColorService {
 
 
     constructor() {
+
     }
 
-    static changeColor(cars: Car[], from: ColorOptionEnum, to: ColorOptionEnum): Car[] {
+    changeColor(cars: Car[], from: ColorOptionEnum, to: ColorOptionEnum): Car[] {
         return cars
             .map(car => {
                 if (car.color === from) {

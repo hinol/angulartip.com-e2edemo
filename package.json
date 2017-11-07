@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "e2e:watch": "watch 'ng e2e -s false' src e2e --wait=1"
+    "e2e:watch": "watch 'ng e2e -s false' src e2e --wait=1",
+    "test:coverage": "ng test --code-coverage"
   },
   "private": true,
   "dependencies": {

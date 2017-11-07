@@ -17,7 +17,10 @@ export class EnginePage {
 
 
     static clickTable(row: number, col: number) {
+
+
         element(by.css(`table tr:nth-child(${row}) > td:nth-child(${col})`)).click();
+
         //
         // element.all(by.css('table tr')).then(rows => {
         //     rows[row - 1].all(by.css('td')).then(cols => {

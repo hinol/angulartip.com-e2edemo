@@ -34,7 +34,7 @@ export class CarService {
     }
 
     makeRainbow(from: ColorOptionEnum, to: ColorOptionEnum): Car[] {
-        return this.changeColorService(this.possibilityCars(), ColorOptionEnum.RED, ColorOptionEnum.PINK)
+        return this.changeColorService.changeColor(this.possibilityCars(), from, to);
     }
 
     possibilityCars(): Car[] {
