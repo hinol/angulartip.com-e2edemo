@@ -12,15 +12,15 @@ import {ChangeColorService} from './change-color.service';
 @Injectable()
 export class CarService {
 
+    private cars: Car[];
 
     constructor(private fetchCarService: FetchCarService,
                 private changeColorService: ChangeColorService) {
-
+            this.init();
     }
 
-
     calculate(requirements: { color: ColorOptionEnum, type: TypeOptionEnum }): number {
-        return this.possibilityCars()
+        return this.cars
             .filter(car => {
                 if (requirements.color && car.color !== requirements.color) {
                     return false;
@@ -34,22 +34,24 @@ export class CarService {
     }
 
     makeRainbow(from: ColorOptionEnum, to: ColorOptionEnum): Car[] {
-        return this.changeColorService.changeColor(this.possibilityCars(), from, to);
+        return this.changeColorService.changeColor(this.cars, from, to);
     }
 
-    possibilityCars(): Car[] {
-        return [
+    init(): void {
+        this.cars = [
             {color: ColorOptionEnum.RED, type: TypeOptionEnum.PICKUP},
             {color: ColorOptionEnum.RED, type: TypeOptionEnum.TRUCK}
         ];
     }
 
+    setCars(cars: Car[]): void {
+        this.cars = cars;
+    }
 
     fetchAllCars(color: ColorOptionEnum): Observable<number> {
         return this.fetchCarService.getCars()
             .map(data => data.filter(_color => _color === color))
             .map(data => data.length);
     }
-
 
 }

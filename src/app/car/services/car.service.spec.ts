@@ -14,10 +14,10 @@ describe('Cat Service  test', () => {
 
         }
     }
-    class ChangeColorServiceMock{
+
+    class ChangeColorServiceMock {
 
     }
-
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -35,19 +35,14 @@ describe('Cat Service  test', () => {
         expect(service).toBeTruthy();
     }));
 
-
     it('some dummy test', () => {
         const posibilityCars = carService.calculate({color: ColorOptionEnum.BLUE, type: TypeOptionEnum.PICKUP});
         expect(posibilityCars).toEqual(0);
     });
 
     it('test', done => {
-
-
         spyOn(FetchCarServiceMock.prototype, 'getCars')
             .and.callFake(() => Observable.of([ColorOptionEnum.PINK, ColorOptionEnum.PINK]));
-
-
         carService.fetchAllCars(ColorOptionEnum.PINK).subscribe(cnt => {
             expect(cnt).toEqual(2);
             done();
