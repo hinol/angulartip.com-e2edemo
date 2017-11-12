@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CAR_ROUTE_SLASH} from '../../classes/routes';
 
 @Component({
   selector: 'car-index',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.scss']
 })
 export class CarIndexComponent implements OnInit {
+
+
+  public routes = CAR_ROUTE_SLASH;
 
   constructor() { }
 
