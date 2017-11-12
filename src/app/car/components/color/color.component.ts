@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ColorForm, ColorOption, TypeOption} from '../../forms/color.form';
+import {ColorForm, ColorOption, ColorOptionEnum, TypeOption} from '../../forms/color.form';
 import {FormGroup} from '@angular/forms';
 import {CarService} from '../../services/car.service';
 
@@ -14,6 +14,8 @@ export class CarColorComponent implements OnInit {
     colors = ColorOption;
     types = TypeOption;
     count: number;
+    colorEnum = ColorOptionEnum;
+    private selectedColor: ColorOptionEnum;
 
     constructor(private carService: CarService) {
     }
@@ -28,5 +30,10 @@ export class CarColorComponent implements OnInit {
         if (valid) {
             this.count = this.carService.calculate(data)+10;
         }
+    }
+
+
+    setColor(color: ColorOptionEnum){
+        this.selectedColor = color;
     }
 }
