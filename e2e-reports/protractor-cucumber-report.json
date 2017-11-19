@@ -46,7 +46,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1703
+              "duration": 2186
             }
           },
           {
@@ -59,7 +59,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1886
+              "duration": 2213
             }
           },
           {
@@ -71,9 +71,8 @@
               "location": "node_modules/cucumber-tsflow/src/BindingDecorator.ts:161"
             },
             "result": {
-              "status": "failed",
-              "duration": 97,
-              "error_message": "AssertionError: expected 12 to be above 20\n    at AppSteps.<anonymous> (/data/www/angulartip.com/e2edemo/e2e/features/app/app.steps.ts:35:64)\n    at step (/data/www/angulartip.com/e2edemo/e2e/features/app/app.steps.ts:41:23)\n    at Object.next (/data/www/angulartip.com/e2edemo/e2e/features/app/app.steps.ts:22:53)\n    at fulfilled (/data/www/angulartip.com/e2edemo/e2e/features/app/app.steps.ts:13:58)\n    at process._tickCallback (internal/process/next_tick.js:109:7)"
+              "status": "passed",
+              "duration": 107
             }
           },
           {
