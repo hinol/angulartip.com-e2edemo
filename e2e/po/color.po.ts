@@ -8,19 +8,19 @@ export class ColorPage {
 
     static getCountConfigurations() {
         return element(by.css('h3 span')).getText().then(v => {
-            return parseFloat(v.toString().trim().split(':')[1])
+            return parseFloat(v.toString().trim().split(':')[1]);
         });
     }
 
     static selectColor(color: ColorOptionEnum) {
-        element(by.name('color')).click()
+        element(by.name('color')).click();
         const colorLabel = ColorOption.filter(c => c.value === color)[0].label;
 
         return element(by.cssContainingText('.mat-option', colorLabel)).click();
     }
 
     static selectType(type: TypeOptionEnum) {
-        element(by.name('type')).click()
+        element(by.name('type')).click();
         const typeLabel = TypeOption.filter(t => t.value === type)[0].label;
 
         return element(by.cssContainingText('.mat-option', typeLabel)).click();
