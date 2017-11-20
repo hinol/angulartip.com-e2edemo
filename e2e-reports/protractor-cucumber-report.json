@@ -1,0 +1,92 @@
+[
+  {
+    "keyword": "Feature",
+    "name": "App should works",
+    "line": 2,
+    "id": "app-should-works",
+    "tags": [
+      {
+        "name": "@appView",
+        "line": 1
+      }
+    ],
+    "uri": "e2e/features/app/app.feature",
+    "elements": [
+      {
+        "id": "app-should-works;app-should-init",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "App should init",
+        "tags": [
+          {
+            "name": "@appView",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/cucumber-tsflow/src/BindingDecorator.ts:81"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "I go to color page",
+            "match": {
+              "location": "node_modules/cucumber-tsflow/src/BindingDecorator.ts:155"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2186
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "Run step color",
+            "match": {
+              "location": "node_modules/cucumber-tsflow/src/BindingDecorator.ts:158"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2213
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "Should has some configurations",
+            "match": {
+              "location": "node_modules/cucumber-tsflow/src/BindingDecorator.ts:161"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 107
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "node_modules/cucumber-tsflow/src/BindingDecorator.ts:85"
+            },
+            "result": {
+              "status": "passed"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
